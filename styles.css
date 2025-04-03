@@ -426,9 +426,211 @@ footer #lista a{
         gap: 1rem;
     }
 }
-body {
+/*Aquí empiezo lo de la API*/
+
+
+#character-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .fichaPersonaje {
+    width: 200px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #ffd521; /* Simpson yellow */
+    transition: transform 0.3s ease;
+  }
+  
+  .fichaPersonaje:hover {
+    transform: translateY(-5px);
+  }
+  
+  .fichaPersonaje img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 3px solid #0057b8; /* Simpson blue */
+  }
+  
+  .infoPersonaje {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .infoPersonaje h3 {
+    margin: 0 0 10px 0;
+    color: #0057b8; /* Simpson blue */
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+  }
+  
+  .info_link {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #0057b8; /* Simpson blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .info_link:hover {
+    background-color: #003d82;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+  
+  .controls button {
+    padding: 8px 16px;
+    background-color: #0057b8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .controls button:hover {
+    background-color: #003d82;
+  }
+  
+  #character-id, #character-name {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+  }
+  
+  #search-character {
+    background-color: #ff9800; /* Orange color for search button */
+  }
+  
+  #search-character:hover {
+    background-color: #e68900;
+  }
+  
+  /* Results counter styling */
+  .results-counter {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Message styling for no results */
+  #character-container > p {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    color: #666;
+  }
+  html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
   }
   
+  main {
+    flex: 1;
+  }
+  
+  footer {
+    
+    margin-top: auto; /* Push the footer down*/
+    width: 100%;
+  }
+
+/* Character actions container for info link and favorite button */
+.character-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Style for the info link (adjusted to work with the new layout) */
+  .info_link {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #0057b8; /* Simpson blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .info_link:hover {
+    background-color: #003d82;
+  }
+  
+  /* Favorite button styling */
+  .favorite-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .favorite-btn i {
+    color: #aaa;
+    font-size: 18px;
+    transition: all 0.2s ease;
+  }
+  
+  .favorite-btn:hover {
+    background-color: #fee3e3;
+  }
+  
+  .favorite-btn:hover i {
+    color: #ff6b6b;
+  }
+  
+  /* Styles for favorites */
+  .favorite-btn.favorite {
+    background-color: #fff0f0;
+  }
+  
+  .favorite-btn.favorite i {
+    color: #ff0000;
+  }
+  
+  /* Favorites button in controls */
+  #fetch-favorites {
+    background-color: #ff6b6b;
+  }
+  
+  #fetch-favorites:hover {
+    background-color: #ff3b3b;
+  }
