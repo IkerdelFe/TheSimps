@@ -563,3 +563,74 @@ footer #lista a{
     margin-top: auto; /* Push the footer down*/
     width: 100%;
   }
+
+/* Character actions container for info link and favorite button */
+.character-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  /* Style for the info link (adjusted to work with the new layout) */
+  .info_link {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #0057b8; /* Simpson blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .info_link:hover {
+    background-color: #003d82;
+  }
+  
+  /* Favorite button styling */
+  .favorite-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #f4f4f4;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .favorite-btn i {
+    color: #aaa;
+    font-size: 18px;
+    transition: all 0.2s ease;
+  }
+  
+  .favorite-btn:hover {
+    background-color: #fee3e3;
+  }
+  
+  .favorite-btn:hover i {
+    color: #ff6b6b;
+  }
+  
+  /* Styles for favorites */
+  .favorite-btn.favorite {
+    background-color: #fff0f0;
+  }
+  
+  .favorite-btn.favorite i {
+    color: #ff0000;
+  }
+  
+  /* Favorites button in controls */
+  #fetch-favorites {
+    background-color: #ff6b6b;
+  }
+  
+  #fetch-favorites:hover {
+    background-color: #ff3b3b;
+  }
