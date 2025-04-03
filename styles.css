@@ -1,103 +1,118 @@
-*{
+/* Base styles and resets */
+* {
     box-sizing: border-box;
     margin: 0; 
 }
-p,label,button{
-    font-family: 'TT Chocolates Trial Medium';
-    font-size: 1.5em;
-}
-/* Fuente de los titulos */
+
+/* Typography */
 @font-face {
-    font-family:'SimpsonfontDEMO';
+    font-family: 'SimpsonfontDEMO';
     src: url('fonts/simpsonfont/Simpsonfont\ DEMO.otf');
 }
-/* FUENTE DEL TEXTO  */
+
 @font-face {
-    font-family:'TT Chocolates Trial Medium';
+    font-family: 'TT Chocolates Trial Medium';
     src: url('fonts/tt_chocolates/TT\ Chocolates\ Trial\ Medium.otf');
 }
 
-h1, h2{
+body {
+    background: linear-gradient(rgba(255, 255, 255, 0.837)), url('img/wallpaper.jpg');
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    flex: 1;
+}
+
+/* Typography elements */
+p, label, button {
+    font-family: 'TT Chocolates Trial Medium';
+    font-size: 1.5em;
+}
+
+h1, h2 {
     font-size: 2.5em;
     font-family: 'SimpsonfontDEMO';
-    text-align: left;
-    margin-bottom: 0.8em;
     text-align: center;
+    margin-bottom: 0.8em;
 }
-h3{
+
+h3 {
     font-size: 1.2em;
     font-family: 'SimpsonfontDEMO';
     text-align: center;
     margin-bottom: 0.8em;
 }
-body{
-    background: linear-gradient(rgba(255, 255, 255, 0.837)), url('img/wallpaper.jpg');
-   
-}
-p::first-letter,h1::first-letter{
+
+p::first-letter, h1::first-letter {
     text-transform: capitalize;
 }
 
-/*  Estilos header */
+/* Navigation and header */
 nav {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
+
 nav ul {
-    margin-top:1em;
+    margin-top: 1em;
     display: flex;
-    flex-direction: row;
-    justify-content:space-around;
+    justify-content: space-around;
     list-style-type: none;
     font-family: 'TT Chocolates Trial Medium';
     font-size: 1.4em;
 }
-#lista a{
+
+#lista a {
     text-decoration: none;
     color: black;
 }
-#lista a:hover{
+
+#lista a:hover {
     color: #7315bf;
 }
-#logo_homer{
+
+#logo_homer {
     width: 35%;
 }
-#lista{
+
+#logo_homer img {
+    width: 15%;
+}
+
+#lista {
     width: 65%;
     text-align: center;
 }
-#logo_homer img{
-    width:15%;
-}
 
-/*  estilos main */
-#user-info{
+/* Main content area */
+#user-info {
     margin: 5em;
     display: flex;
-    flex-direction:row;
     justify-content: center;
 }
-#homie_resp{
+
+#homie_resp {
     visibility: hidden;
 }
-#homie_web{
+
+#homie_web {
     width: 52%;
 }
+
 .user-info--image {
     padding-right: 5em;
-   /* animation-name: animacionImagen;
-    animation-duration: 5s;
-    animation-timing-function: linear;
-    animation-direction: alternate;
-    animation-iteration-count: infinite;
-    animation-delay: 6s; */
-}     
-.user-info--text{
-    width: 50%;
-} 
+}
 
-/*Acordeanonando*/
+.user-info--text {
+    width: 50%;
+}
+
+/* Accordion styles */
 .accordion {
     background-color: rgb(197, 226, 246);
     color: #000000;
@@ -108,96 +123,97 @@ nav ul {
     border: none;
     outline: none;
     transition: 0.4s;
-    border-radius: em;
-  }
-  
-  .panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
-    overflow: hidden;
-  }
-  .accordion:after {
+    border-radius: 1em;
+}
+
+.accordion:after {
     content: '\02795';
     font-size: 13px;
     color: #000000;
     float: right;
     margin-left: 5px;
-  }
-  
-  /*.active:after {
-    content: "\2796"; Unicode character for "minus" sign (-)
-  }*/
-/*Acordeonando fin*/
+}
 
-/*FOOTER */
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}
+
+/* Footer styles */
 footer {
     background-color: rgb(120, 178, 216);
     text-align: center;
     padding: 0.5%;
+    margin-top: auto;
+    width: 100%;
 }
-.icons{
+
+.icons {
     display: flex;
-    flex-direction: row;
     justify-content: center;
     margin-top: 1%;
 }
-.icons li{
+
+.icons li {
     list-style: none;
     width: 5%;
 }
-.icons img{
+
+.icons img {
     width: 50%;
 }
-footer #lista{
+
+footer #lista {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     width: 100%;
 }
-footer #lista ul{
-        display: flex;
-        flex-direction: row;
-        list-style-type: none;
-        font-family: 'TT Chocolates Trial Medium';
-        font-size: 1.4em;
-}
-footer #lista ul li{
-    padding: 5%;
-}
-footer #lista a{
-    text-decoration: none;
-    color: black;
+
+footer #lista ul {
+    display: flex;
+    list-style-type: none;
+    font-family: 'TT Chocolates Trial Medium';
+    font-size: 1.4em;
 }
 
-/*FORMULARIO*/
+footer #lista ul li {
+    padding: 5%;
+}
+
+/* Form styles */
 #contact-form {
-    padding:1.5rem;
+    padding: 1.5rem;
     display: flex;
     justify-content: center;
 }
-/* #contact-form * {
-    display: block;
-} */
+
 .newsletter-input *, .team-input * {
     display: inline-block !important;
 }
-.con{
+
+.con {
     display: flex;
     flex-direction: row;
 }
-.lab{
+
+.lab {
     margin-right: 2%;
 }
+
 #contact-form label {
     margin-top: 0.5rem;
 }
-#contact-form input,textarea {
+
+#contact-form input, textarea {
     border-radius: 2em;
-    border:none;
+    border: none;
     box-shadow: 0px 5px 5px 2px rgba(5, 29, 72, 0.32);
     padding: 1%;
 }
-#contact-form fieldset{
+
+#contact-form fieldset {
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -206,48 +222,57 @@ footer #lista a{
     box-shadow: 0px 4px 10px 6px rgba(5, 29, 72, 0.32);
     border: none;
 }
-#contact-form fieldset select{
+
+#contact-form fieldset select {
     width: 50%;
     display: flex;
-    flex-direction:column;
- 
+    flex-direction: column;
 }
-#contact-form fieldset a, fieldset select{
+
+/* Button styles */
+#contact-form fieldset a, 
+fieldset select,
+.Chat_opciones a,
+.project a, 
+.experience a {
     margin-top: 2%;
-    background-color:rgb(120, 178, 216);
+    background-color: rgb(120, 178, 216);
     border: none;
     color: #ffffff;
     border-radius: 3em;
     text-align: center;
     text-decoration: none;
     font-family: 'TT Chocolates Trial Medium';
-    width: 25%;
     padding: 1%;
 }
-.Chat_opciones a{
-    margin-top: 2%;
-    margin-bottom: 2%;
-    text-align: center;
-    background-color:rgb(120, 178, 216);
-    border: none;
-    color: #ffffff;
-    border-radius: 1.5em;
-    text-decoration: none;
-    font-family: 'TT Chocolates Trial Medium';
-    width:100% ;
-    padding:1.5% ;
+
+#contact-form fieldset a, 
+fieldset select {
+    width: 25%;
 }
 
+.Chat_opciones a {
+    margin-bottom: 2%;
+    width: 100%;
+    padding: 1.5%;
+}
 
-/* Estilos de proyectos */
-.projects-list{
+.project a, 
+.experience a {
+    width: 45%;
+    padding: 3%;
+}
+
+/* Project and Experience sections */
+.projects-list {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     padding: 1rem;
     justify-content: space-around;
 }
-.project,.experience {
+
+.project, .experience {
     width: 100%;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -256,220 +281,95 @@ footer #lista a{
     box-shadow: 0px 4px 10px 6px rgba(5, 29, 72, 0.32);
     margin-bottom: 5%;
 }
-.project__info,.experience__info {
+
+.project__info, .experience__info {
     padding: 1rem;
 }
-.project__info p,.experience__info p {
+
+.project__info p, .experience__info p {
     height: 200px;
     overflow-y: auto;
-}
-.project__info h3, .project__info p,.experience__info h3, .experience__info p {
     margin-bottom: 1rem;
 }
-.project img, .experience img{
+
+.project__info h3, .experience__info h3 {
+    margin-bottom: 1rem;
+}
+
+.project img, .experience img {
     width: 100%;
 }
+
 .project__link, .experience__link {
     width: 50%;
     margin: auto;
     display: block;
 }
+
 .project__link button, .experience__link button {
     width: 100%;
-    padding:0.5rem;
+    padding: 0.5rem;
     border-radius: 5px;
 }
 
 .experiences-list {
     display: grid;
     justify-items: center;
-    grid: auto-flow / 1fr;
-    padding:1rem;
-}
-/* botones */
-.project a, .experience a{
-    background-color:rgb(120, 178, 216);
-    border: none;
-    color: #ffffff;
-    border-radius: 3em;
-    text-align: center;
-    text-decoration: none;
-    font-family: 'TT Chocolates Trial Medium';
-    width: 45%;
-    padding: 3%;
+    grid-template-columns: 1fr;
+    padding: 1rem;
 }
 
-
-@media  (max-width:600px) and (min-width: 360px) {
-    h1, h2{
-        font-size: 1.8em;
-        font-family: 'SimpsonfontDEMO';
-        text-align: center;
-        margin-bottom: 0.8em;
-    }
-    h3{
-        font-size: 1.2;
-        font-family: 'SimpsonfontDEMO';
-        text-align: center;
-        margin-bottom: 0.8em;
-    }
-    p,label,button{
-        font-family: 'TT Chocolates Trial Medium';
-        font-size: 1.2em;
-    }
-    main{
-        padding:6%;
-    }
-    /* HEADER */
-    #lista ul{
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        font-size: 1.2em;
-    }
-    #logo_homer{
-        width: 40%;
-    }
-    #logo_homer img{
-        width: 55%;
-    }
-   /* PÁGINA PRINCIPAL */
-    #homie_resp{
-        visibility: visible;
-        margin: 0;
-        padding: 0%;
-    }
-    #homie_web{
-        visibility: hidden;
-    }
-    #user-info{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        text-align: justify;
-        width: 100%;
-        margin: 0;
-        padding:0;
-    }
-    .user-info--image{
-        width: 2%;
-        margin: 0;
-        padding: 0;
-        
-    }
-    .user-info--text{
-        width: 100%;
-    } 
-    /* PROYECTOS */
-    .project, .experience{
-        margin-bottom: 10%;
-    }
-   
-    .project p , .experience p{
-        text-align: center ;
-    }
-    .Chat_opciones a, select{
-        background-color:rgb(120, 178, 216);
-        border: none;
-        color: #ffffff;
-        border-radius: 3em;
-        text-align: center;
-        text-decoration: none;
-        font-family: 'TT Chocolates Trial Medium';
-        width: 45%;
-        padding: 3%;
-    }
-
-    /* FOOTER */
-    footer{
-        display: flex;
-        flex-direction:column;
-        align-items: center;
-        width: 100%;
-        padding: 1%;
-        font-size: 1.2em;
-    }
-    .icons{
-        display: flex;
-        flex-direction: row;
-        margin-top: 0.5em;
-    }
-    .icons li{
-        list-style: none;
-        width: 15%;
-    }
-    .icons img{
-        width: 60%;
-    }
-  
-}
-
-@media  (min-width:768px) {
-    #user-info{
-        display: flex;
-        flex-direction:row;
-    }
-    .project{
-        width: 40%;
-    }
-    .experiences-list{
-        grid: auto-flow / 1fr 1fr;
-        gap: 1rem;
-    }
-}
-@media  (min-width:1024px) {
-    .project {
-        width: 22%;
-    }
-    .experiences-list{
-        grid: auto-flow / 1fr 1fr 1fr;
-        gap: 1rem;
-    }
-}
-/*Aquí empiezo lo de la API*/
-
-
+/* Character display styles */
 #character-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
     margin-top: 30px;
-  }
-  
-  .fichaPersonaje {
+}
+
+.fichaPersonaje {
     width: 200px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background-color: #ffd521; /* Simpson yellow */
     transition: transform 0.3s ease;
-  }
-  
-  .fichaPersonaje:hover {
+}
+
+.fichaPersonaje:hover {
     transform: translateY(-5px);
-  }
-  
-  .fichaPersonaje img {
+}
+
+.fichaPersonaje img {
     width: 100%;
     height: 250px;
     object-fit: cover;
     border-bottom: 3px solid #0057b8; /* Simpson blue */
-  }
-  
-  .infoPersonaje {
+}
+
+.infoPersonaje {
     padding: 15px;
     text-align: center;
-  }
-  
-  .infoPersonaje h3 {
+}
+
+.infoPersonaje h3 {
     margin: 0 0 10px 0;
     color: #0057b8; /* Simpson blue */
     font-family: Arial, sans-serif;
     font-size: 18px;
-  }
-  
-  .info_link {
+}
+
+/* Character actions */
+.character-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.info_link {
     display: inline-block;
     padding: 5px 15px;
     background-color: #0057b8; /* Simpson blue */
@@ -478,21 +378,22 @@ footer #lista a{
     border-radius: 4px;
     font-weight: bold;
     transition: background-color 0.3s ease;
-  }
-  
-  .info_link:hover {
+}
+
+.info_link:hover {
     background-color: #003d82;
-  }
-  
-  .controls {
+}
+
+/* Controls for character display */
+.controls {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
     flex-wrap: wrap;
-  }
-  
-  .controls button {
+}
+
+.controls button {
     padding: 8px 16px;
     background-color: #0057b8;
     color: white;
@@ -500,97 +401,29 @@ footer #lista a{
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-  }
-  
-  .controls button:hover {
+}
+
+.controls button:hover {
     background-color: #003d82;
-  }
-  
-  #character-id, #character-name {
+}
+
+#character-id, #character-name {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     width: 200px;
-  }
-  
-  #search-character {
-    background-color: #ff9800; /* Orange color for search button */
-  }
-  
-  #search-character:hover {
-    background-color: #e68900;
-  }
-  
-  /* Results counter styling */
-  .results-counter {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 20px;
-    padding: 10px;
-    background-color: #f0f0f0;
-    border-radius: 4px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Message styling for no results */
-  #character-container > p {
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f8f8;
-    border-radius: 4px;
-    color: #666;
-  }
-  html, body {
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-  main {
-    flex: 1;
-  }
-  
-  footer {
-    
-    margin-top: auto; /* Push the footer down*/
-    width: 100%;
-  }
+}
 
-/* Character actions container for info link and favorite button */
-.character-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  /* Style for the info link (adjusted to work with the new layout) */
-  .info_link {
-    display: inline-block;
-    padding: 5px 15px;
-    background-color: #0057b8; /* Simpson blue */
-    color: white;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-  }
-  
-  .info_link:hover {
-    background-color: #003d82;
-  }
-  
-  /* Favorite button styling */
-  .favorite-btn {
+#search-character {
+    background-color: #ff9800;
+}
+
+#search-character:hover {
+    background-color: #e68900;
+}
+
+/* Favorite button styling */
+.favorite-btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -601,36 +434,393 @@ footer #lista a{
     border-radius: 50%;
     cursor: pointer;
     transition: all 0.2s ease;
-  }
-  
-  .favorite-btn i {
+}
+
+.favorite-btn i {
     color: #aaa;
     font-size: 18px;
     transition: all 0.2s ease;
-  }
-  
-  .favorite-btn:hover {
+}
+
+.favorite-btn:hover {
     background-color: #fee3e3;
-  }
-  
-  .favorite-btn:hover i {
+}
+
+.favorite-btn:hover i {
     color: #ff6b6b;
-  }
-  
-  /* Styles for favorites */
-  .favorite-btn.favorite {
+}
+
+.favorite-btn.favorite {
     background-color: #fff0f0;
-  }
-  
-  .favorite-btn.favorite i {
+}
+
+.favorite-btn.favorite i {
     color: #ff0000;
-  }
-  
-  /* Favorites button in controls */
-  #fetch-favorites {
+}
+
+#fetch-favorites {
     background-color: #ff6b6b;
+}
+
+#fetch-favorites:hover {
+    background-color: #ff3b3b;
+}
+
+/* Results counter and messages */
+.results-counter {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    font-weight: bold;
+    color: #333;
+}
+
+#character-container > p {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+    color: #666;
+}
+
+/* Memory Game Stylesheet */
+
+/* Game Board Layout */
+#game-board {
+    display: grid;
+    gap: 16px;
+    margin: 20px auto;
+    max-width: 1000px;
+    justify-content: center;
   }
   
-  #fetch-favorites:hover {
-    background-color: #ff3b3b;
+  /* Message Styling */
+  .game-message {
+    background-color: rgba(255, 255, 0, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    border: 2px solid #ffd90f;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Game Statistics */
+  .game-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .game-stats {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .stat {
+    background-color: #ffd90f;
+    padding: 10px 15px;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .game-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  /* Memory Card Styling */
+  .memory-card {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    cursor: pointer;
+    perspective: 1000px;
+    transition: transform 0.1s;
+  }
+  
+  .memory-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+  }
+  
+  .memory-card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .card-front {
+    background-color: #3e7ac2;
+    color: black;
+  }
+  
+  .card-back {
+    background-color: white;
+    color: black;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+  /* Logo on card front */
+  .card-logo {
+    width: 70%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  /* Character image styling */
+  .card-back img {
+    max-width: 85%;
+    max-height: 70%;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 8px;
+  }
+  
+  /* Character name styling */
+  .card-name {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-align: center;
+    background-color: #ffd90f;
+    color: #333;
+    padding: 5px 10px;
+    border-radius: 4px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  /* Matched card styling */
+  .memory-card.matched .card-inner {
+    box-shadow: 0 0 20px 5px rgba(76, 175, 80, 0.7);
+  }
+  
+  .memory-card.match-animation {
+    animation: matchPulse 1s ease-in-out;
+  }
+  
+  @keyframes matchPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  /* Button Styling */
+  button {
+    background-color: #ffd90f;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background-color: #ffbf00;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(1px);
+  }
+  
+  button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* Select Styling */
+  select {
+    padding: 9px 15px;
+    border: 2px solid #ffd90f;
+    border-radius: 6px;
+    background-color: white;
+    cursor: pointer;
+  }
+  
+  /* Modal Styling */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: modalOpen 0.4s ease-out;
+  }
+  
+  @keyframes modalOpen {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .close:hover {
+    color: #333;
+  }
+  
+  .game-results {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .memory-card {
+      height: 120px;
+    }
+    
+    .game-info {
+      flex-direction: column;
+    }
+    
+    .game-stats {
+      justify-content: space-between;
+      width: 100%;
+    }
+    
+    .game-controls {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .modal-content {
+      width: 90%;
+      margin: 30% auto;
+    }
+    
+    .card-name {
+      font-size: 0.8rem;
+    }
+  }
+  
+  /* For smaller screens */
+  @media (max-width: 480px) {
+    .memory-card {
+      height: 100px;
+    }
+    
+    .stat {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+    
+    button, select {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Specific adjustments for different card quantities */
+  /* For easy mode (6 pairs = 12 cards) */
+  #game-board.memory-game[style*="grid-template-columns: repeat(4, 1fr)"] .memory-card {
+    height: 140px;
+  }
+  
+  /* For medium mode (8 pairs = 16 cards) */
+  #game-board.memory-game[style*="grid-template-columns: repeat(4, 1fr)"].medium .memory-card {
+    height: 130px;
+  }
+  
+  /* For hard mode (12 pairs = 24 cards) */
+  #game-board.memory-game[style*="grid-template-columns: repeat(6, 1fr)"] .memory-card {
+    height: 120px;
+  }
+  
+  /* Additional Animation for Card Flip */
+  @keyframes flipInY {
+    from {
+      transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+      animation-timing-function: ease-in;
+      opacity: 0;
+    }
+    40% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+      animation-timing-function: ease-in;
+    }
+    60% {
+      transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+      opacity: 1;
+    }
+    80% {
+      transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
+    }
+    to {
+      transform: perspective(400px);
+    }
+  }
+  
+  /* Apply this animation to flipped cards */
+  .memory-card.flipped .card-inner {
+    animation: flipInY 0.6s ease-out;
   }
