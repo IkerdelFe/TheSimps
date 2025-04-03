@@ -278,6 +278,5 @@ async function getSimpsonsShow() {
       searchInput.value = lastSearch;
     }
     
-    // Show initial loading message
-    characterContainer.innerHTML = '<p>Select "Simpson Family", "All Characters", or "Favorites" to begin, or search for a specific character</p>';
+
   });
