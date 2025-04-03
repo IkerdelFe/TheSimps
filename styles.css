@@ -431,4 +431,18 @@ body {
     flex-direction: column;
     min-height: 100vh;
   }
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
   
+  main {
+    flex: 1;
+  }
+  
+  footer {
+    margin-top: auto; /* Pushes down the footer*/
+    width: 100%;
+  }
+
