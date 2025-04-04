@@ -1,5 +1,5 @@
 # TheSimps
-Homer Simpson's unofficial webpage.
+Homer Simpson's unofficial webpage. url: https://ikerdelfe.github.io/TheSimps/
 
 # Overview
 This web application is an interactive platform dedicated to The Simpsons, featuring character exploration, information, and a memory game. The project demonstrates object-oriented JavaScript programming, DOM manipulation, API consumption, and local data persistence.
