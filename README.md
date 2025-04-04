@@ -51,3 +51,4 @@ User authentication with Firebase <br>
 Additional games and interactive features <br>
 Localization support for multiple languages <br>
 Expanded character information and trivia <br>
+Simplify the CSS stylesheet <br>
