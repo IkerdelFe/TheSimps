@@ -4,12 +4,20 @@ Homer Simpson's unofficial webpage.
 # Overview
 This web application is an interactive platform dedicated to The Simpsons, featuring character exploration, information, and a memory game. The project demonstrates object-oriented JavaScript programming, DOM manipulation, API consumption, and local data persistence.
 
-# Features
+# Characters' Features
 Browse the complete cast of The Simpsons show <br>
 Search for specific characters by name <br>
 Filter to show only the Simpson family members <br>
 Save favorite characters using localStorage <br>
 Display character details with images pulled from the TVMaze API <br>
+
+# Memory Game 
+Three difficulty levels: Easy (6 pairs), Medium (8 pairs), and Hard (12 pairs) <br>
+Interactive card flipping with animations <br>
+Game statistics tracking (attempts, matches, timer) <br>
+Win detection with congratulations modal <br>
+Persistent high scores using localStorage <br>
+Responsive design for various screen sizes <br>
 
 # DOM Manipulation
 Dynamic creation and updating of character cards <br>
@@ -29,14 +37,6 @@ Saves favorite characters to localStorage <br>
 Caches API responses to reduce network requests <br>
 Remembers last search query between sessions <br>
 Stores game statistics for returning players <br>
-
-# Memory Game 
-Three difficulty levels: Easy (6 pairs), Medium (8 pairs), and Hard (12 pairs) <br>
-Interactive card flipping with animations <br>
-Game statistics tracking (attempts, matches, timer) <br>
-Win detection with congratulations modal <br>
-Persistent high scores using localStorage <br>
-Responsive design for various screen sizes <br>
 
 # Technologies Used
 Vanilla JavaScript (ES6+) <br>
