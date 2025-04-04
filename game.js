@@ -123,7 +123,7 @@ class MemoryGame {
     });
     
     // Show initial message
-    this.showMessage('¡Selecciona una dificultad y pulsa Comenzar para jugar!');
+    this.showMessage('Pick a difficulty level and try your best!');
   }
   
   // Start the game
@@ -134,13 +134,13 @@ class MemoryGame {
     
     // Clear previous game
     this.resetGameState();
-    this.gameBoard.innerHTML = '<p>Cargando personajes...</p>';
+    this.gameBoard.innerHTML = '<p>Loading characters...</p>';
     
     try {
       // Get characters from API
       const characters = await this.fetchCharacters();
       if (!characters || characters.length < this.pairsCount) {
-        this.showMessage('No hay suficientes personajes con imágenes. Inténtalo de nuevo.');
+        this.showMessage('Not enough character with pictures. Try again.');
         return;
       }
       
@@ -169,7 +169,7 @@ class MemoryGame {
   resetGame() {
     this.resetGameState();
     this.gameBoard.innerHTML = '';
-    this.showMessage('¡Selecciona una dificultad y pulsa Comenzar para jugar!');
+    this.showMessage('Pick a difficulty level and try again!');
     this.stopTimer();
     this.resetButton.disabled = true;
     this.startButton.disabled = false;

@@ -1,97 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="stylesheet" href="styles.css">
-<script type="module" src="game.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="game.js"></script>
 
-<title>The Simpsons' Memory Game</title>
+  <title>The Simpsons' Memory Game</title>
 </head>
+
 <body>
-<header>
-<nav>
-<div id="logo_homer">
-<a href="index.html"><img src="img/icon.png" alt="logo_icon"></a>
-</div>
-<div id="lista">
-<ul>
-<li class="nav-link"><a href="index.html">Homer</a></li>
-<li class="nav-link"><a href="biography.html">Biography</a></li>
-<li class="nav-link"><a href="characters.html">Characters</a></li>
-<li class="nav-link active"><a href="games.html">Games</a></li>
-<li class="nav-link"><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-</nav>
-</header>
-<main>
-<h1>The Simpsons' Memory Game</h1>
+  <header>
+    <nav>
+      <div id="logo_homer">
+        <a href="index.html"><img src="img/icon.png" alt="logo_icon"></a>
+      </div>
+      <div id="lista">
+        <ul>
+          <li class="nav-link"><a href="index.html">Homer</a></li>
+          <li class="nav-link"><a href="biography.html">Biography</a></li>
+          <li class="nav-link"><a href="characters.html">Characters</a></li>
+          <li class="nav-link active"><a href="games.html">Games</a></li>
+          <li class="nav-link"><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h1>The Simpsons' Memory Game</h1>
 
-<div class="game-info">
-  <div class="game-stats">
-    <div class="stat">
-      <span>Attemps:</span>
-      <span id="attempts">0</span>
+    <div class="game-info">
+      <div class="game-stats">
+        <div class="stat">
+          <span>Attempts:</span>
+          <span id="attempts">0</span>
+        </div>
+        <div class="stat">
+          <span>Found pairs:</span>
+          <span id="matches">0</span>
+        </div>
+        <div class="stat">
+          <span>Timer:</span>
+          <span id="timer">00:00</span>
+        </div>
+      </div>
+      <div class="game-controls">
+        <select id="difficulty">
+          <option value="easy">Easy (6 pairs)</option>
+          <option value="medium">Medium (8 pairs)</option>
+          <option value="hard">Hard (12 pairs)</option>
+        </select>
+        <button id="start-game">Start Game</button>
+        <button id="reset-game" disabled>Restart</button>
+      </div>
     </div>
-    <div class="stat">
-      <span>Found pairs:</span>
-      <span id="matches">0</span>
-    </div>
-    <div class="stat">
-      <span>Timer:</span>
-      <span id="timer">00:00</span>
-    </div>
-  </div>
-  <div class="game-controls">
-    <select id="difficulty">
-      <option value="easy">Easy (6 pairs)</option>
-      <option value="medium">Medium (8 pairs)</option>
-      <option value="hard">Hard (12 pairs)</option>
-    </select>
-    <button id="start-game">Start Game</button>
-    <button id="reset-game" disabled>Restart</button>
-  </div>
-</div>
 
-<div id="game-container">
-  <div class="game-message">
-    <p>¡Selecciona una dificultad y pulsa Comenzar para jugar!</p>
-  </div>
-  <div id="game-board" class="memory-game"></div>
-</div>
-
-<div id="win-modal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>¡Felicidades!</h2>
-    <p>Has completado el juego de memoria.</p>
-    <div class="game-results">
-      <p>Tiempo: <span id="result-time">00:00</span></p>
-      <p>Intentos: <span id="result-attempts">0</span></p>
+    <div id="game-container">
+      <div class="game-message">
+        <p>Pick a difficulty level and try your best!</p>
+      </div>
+      <div id="game-board" class="memory-game"></div>
     </div>
-    <button id="play-again">¡Jugar otra vez!</button>
-  </div>
-</div>
 
-</main>
-<footer>
-<p>Homer Simpson 2025 &copy;</p>
-<div class="icons">
-<li class="contact-link">
-<a href="https://www.pongoresume.com/images/upload/HomerResume_022410d.pdf">
-<img src="img/linkedin.png" alt="linkedin">
-</a>
-</li>
-<li class="contact-link">
-<a href="https://simpsons.fandom.com/es/wiki/Simpson_Wiki_en_Espa%C3%B1ol:Portada">
-<img src="img/github.png" alt="github">
-</a>
-</li>
-</div>
-</footer>
+    <div id="win-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Congrats!</h2>
+        <p>You completed the memory challenge.</p>
+        <div class="game-results">
+          <p>Time: <span id="result-time">00:00</span></p>
+          <p>Attempts: <span id="result-attempts">0</span></p>
+        </div>
+        <button id="play-again">Play again!</button>
+      </div>
+    </div>
+
+  </main>
+  <footer>
+    <p>Homer Simpson 2025 &copy;</p>
+    <div class="icons">
+      <li class="contact-link">
+        <a href="https://www.pongoresume.com/images/upload/HomerResume_022410d.pdf">
+          <img src="img/linkedin.png" alt="linkedin">
+        </a>
+      </li>
+      <li class="contact-link">
+        <a href="https://simpsons.fandom.com/es/wiki/Simpson_Wiki_en_Espa%C3%B1ol:Portada">
+          <img src="img/github.png" alt="github">
+        </a>
+      </li>
+    </div>
+  </footer>
 </body>
+
 </html>

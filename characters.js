@@ -13,7 +13,6 @@ async function getSimpsonsShow() {
   }
   
   async function getAllSimpsonsCharacters() {
-    // Check localStorage for cached data
     const storedCharacters = localStorage.getItem('simpsonsCharacters');
     if (storedCharacters) {
       return JSON.parse(storedCharacters);
@@ -26,12 +25,12 @@ async function getSimpsonsShow() {
         character.character.image && character.character.image.medium
       );
       
-      // Remove duplicates based on character name
+      // Remove duplicates (character name)
       const uniqueCharacters = Array.from(
         new Map(charactersWithImages.map(char => [char.character.name, char])).values()
       );
       
-      // Save to localStorage for future requests
+      // Save to localStorage (future requests)
       localStorage.setItem('simpsonsCharacters', JSON.stringify(uniqueCharacters));
       return uniqueCharacters;
     } catch (error) {
@@ -47,24 +46,24 @@ async function getSimpsonsShow() {
     );
   }
   
-  // Get favorites from localStorage
+  // Get favorites 
   function getFavorites() {
     const favorites = localStorage.getItem('simpsonsFavorites');
     return favorites ? JSON.parse(favorites) : [];
   }
   
-  // Save favorites to localStorage
+  // Save favorites
   function saveFavorites(favorites) {
     localStorage.setItem('simpsonsFavorites', JSON.stringify(favorites));
   }
   
-  // Check if a character is a favorite
+  // Check if character=favorite
   function isFavorite(characterId) {
     const favorites = getFavorites();
     return favorites.includes(characterId);
   }
   
-  // Toggle favorite status for a character
+  // Toggle favorite status
   function toggleFavorite(characterId) {
     const favorites = getFavorites();
     const index = favorites.indexOf(characterId);
@@ -79,7 +78,7 @@ async function getSimpsonsShow() {
     return index === -1; // Return true if was added, false if was removed
   }
   
-  // Filter characters to show only favorites
+  // Filter characters (favorites)
   function filterFavorites(characters) {
     const favorites = getFavorites();
     return characters.filter(character => 
@@ -138,7 +137,7 @@ async function getSimpsonsShow() {
       return;
     }
     
-    // Add results counter
+    // results número
     const resultsCounter = document.createElement('div');
     resultsCounter.className = 'results-counter';
     resultsCounter.textContent = `Found ${characters.length} character${characters.length !== 1 ? 's' : ''}`;
@@ -147,7 +146,7 @@ async function getSimpsonsShow() {
     characters.forEach(castMember => {
       const character = castMember.character;
       if (!character.image || !character.image.medium) {
-        return; // Skip characters without images
+        return; // Skip characters sin foto
       }
       
       const characterCard = document.createElement('article');
@@ -170,7 +169,7 @@ async function getSimpsonsShow() {
         </div>
       `;
       
-      // Add event listener to the favorite button
+      // event listener to fav button
       const favoriteBtn = characterCard.querySelector('.favorite-btn');
       favoriteBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -192,7 +191,6 @@ async function getSimpsonsShow() {
       return;
     }
     
-    // Create search input and button
     const searchInput = document.createElement('input');
     searchInput.type = 'text';
     searchInput.id = 'character-name';
@@ -201,17 +199,15 @@ async function getSimpsonsShow() {
     const searchButton = document.createElement('button');
     searchButton.id = 'search-character';
     searchButton.textContent = 'Search Character';
+  
     
-    // Create favorites button
     const favoritesButton = document.createElement('button');
     favoritesButton.id = 'fetch-favorites';
     favoritesButton.textContent = 'Favorites';
     
-    // Add search elements to controls div
     controlsDiv.prepend(searchButton);
     controlsDiv.prepend(searchInput);
     
-    // Add favorites button after the existing buttons
     const fetchAllButton = document.getElementById('fetch-all');
     if (fetchAllButton) {
       controlsDiv.insertBefore(favoritesButton, fetchAllButton.nextSibling);
@@ -225,7 +221,6 @@ async function getSimpsonsShow() {
       fetchFamilyButton.addEventListener('click', drawSimpsonsFamily);
     }
     
-    // Add event listener to favorites button
     favoritesButton.addEventListener('click', drawFavoriteCharacters);
     
     const handleSearch = async () => {
@@ -239,7 +234,7 @@ async function getSimpsonsShow() {
           
           drawCharacterCards(foundCharacters, characterContainer);
           
-          // Save recent search to localStorage
+          // Save search 
           localStorage.setItem('lastSearch', searchName);
         } catch (error) {
           characterContainer.innerHTML = '<p>Error searching characters. Please try again.</p>';
@@ -272,7 +267,7 @@ async function getSimpsonsShow() {
       });
     }
     
-    // Restore last search from localStorage
+    // Restore last search 
     const lastSearch = localStorage.getItem('lastSearch');
     if (lastSearch) {
       searchInput.value = lastSearch;
